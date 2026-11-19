@@ -28,7 +28,7 @@ h1,h2,h3{color:#18365c;}
 
 st.sidebar.markdown("## Plataforma Integrada SC")
 st.sidebar.caption("Módulo · Avaliação Econômica / HDM-4")
-st.sidebar.markdown("**Versão:** 0.2.0 — SC-110 (inventário integral)")
+st.sidebar.markdown("**Versão:** 0.2.1 — SC-110 (pacote completo revisado)")
 st.sidebar.info("HDM-4 continua responsável por executar as simulações econômicas. Este módulo prepara a atualização de dados.")
 
 st.title("🛣️ HDM-4 | Atualização de Projetos")

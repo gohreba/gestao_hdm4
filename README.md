@@ -1,4 +1,4 @@
-# Plataforma Integrada SC — módulo HDM-4 (v0.2.0)
+# Plataforma Integrada SC — módulo HDM-4 (v0.2.1)
 
 Aplicativo Streamlit de **inventário, conferência e preparação de MDBs** para importação nativa no HDM-4 v2.12.02. Não modifica `objects.dat`/`objects.idx`; ainda não cria um workspace nativo pronto para rodar.
 
@@ -64,3 +64,23 @@ streamlit run app.py
 ```
 
 A abertura real de `.mdb` requer o driver UCanAccess (`ucanaccess-5.3.0-uber.jar`) obtido em execução no Streamlit. Os testes automatizados locais não reproduzem a importação no HDM-4; a prova feita pelo usuário para o IRI confirma apenas aquele caso.
+
+
+## Correção de instalação v0.2.1
+
+Esta edição é **um pacote integral**, não um patch incremental. Foi preparado para corrigir a
+inconsistência entre arquivos do repositório detectada pelos erros de importação
+`REVIEW_FIELDS` e `No module named hdm4_core.excel_reader`.
+
+**Instalação:** extraia o ZIP e faça upload do **conteúdo** na **raiz do repositório GitHub**,
+preservando exatamente `app.py`, `hdm4_core/`, `java/`, `packages.txt`,
+`requirements.txt`, `tests/`, e `.streamlit/`. Não coloque todos dentro de uma nova pasta.
+No GitHub, verifique se `hdm4_core/excel_reader.py` e `hdm4_core/validation.py` existem.
+
+**Atenção:** confirmar pela interface do GitHub que todos os arquivos estão no commit
+é necessário: o ZIP não altera automaticamente o GitHub. Na aba **Actions** do GitHub,
+a verificação `Verificar estrutura HDM-4` deve passar antes de testar a implantação do Streamlit.
+A verificação cobre importações Python e testes unitários, mas não garante a disponibilidade
+do driver Java no Streamlit nem a reimportação no HDM-4.
+
+**Importante:** não publique `HDM4.zip`, os MDBs reais ou a planilha operacional no repositório público.
